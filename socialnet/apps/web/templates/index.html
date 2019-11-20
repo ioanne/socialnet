@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <p>Dominio: {{ site.domain }} </p>
+
+    {% for page in site.pages.all %}
+        <h3>{{ page.title }}</h3>
+        {% for section in page.sections.all %}
+            <ul>
+                <li> {{ section.title }} </li>
+                <li> {{ section.description }} </li>
+            </ul>
+        {% endfor %}
+    {% endfor %}
+
+{% endblock %}
